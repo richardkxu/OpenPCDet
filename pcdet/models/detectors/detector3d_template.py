@@ -40,6 +40,7 @@ class Detector3DTemplate(nn.Module):
             'point_cloud_range': self.dataset.point_cloud_range,
             'voxel_size': self.dataset.voxel_size
         }
+        # build module one by one
         for module_name in self.module_topology:
             module, model_info_dict = getattr(self, 'build_%s' % module_name)(
                 model_info_dict=model_info_dict

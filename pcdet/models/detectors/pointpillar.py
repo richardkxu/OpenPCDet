@@ -24,6 +24,7 @@ class PointPillar(Detector3DTemplate):
     def get_training_loss(self):
         disp_dict = {}
 
+        # loss from anchor head template
         loss_rpn, tb_dict = self.dense_head.get_loss()
         tb_dict = {
             'loss_rpn': loss_rpn.item(),
