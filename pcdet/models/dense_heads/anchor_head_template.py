@@ -223,7 +223,7 @@ class AnchorHeadTemplate(nn.Module):
         return rpn_loss, tb_dict
 
     def generate_predicted_boxes(self, batch_size, cls_preds, box_preds, dir_cls_preds=None):
-        """
+        """decode prediction map to a list of bboxes
         Args:
             batch_size:
             cls_preds: (N, H, W, C1)
